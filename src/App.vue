@@ -1,33 +1,27 @@
-<template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld :foo="foo" />
-    <SecondComponent :bar="bar" />
-    <ConditionalComponent v-if="seen" />
-    <Button @change-seen="setSeen" />
-  </div>
-</template>
-
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import SecondComponent from './components/SecondComponent.vue'
 import ConditionalComponent from './components/ConditionalComponent.vue'
 import Button from './components/Button.vue'
+import { mapState } from 'vuex'
 
 export default {
   name: 'App',
   data() {
-    return {
-      foo:"Let's be mature, not 12",
-      bar:"How to Vue",
-      seen: true
-    };
+  },
+  computed: {
+    ...mapState({
+      foo: state => state.foo,
+      bar: state => state.bar,
+      seen: state => state.seen
+    }),
   },
   methods: {
-    setSeen() {
-      this.seen = !this.seen
-      console.log(`hello world! Right now you ${this.seen ? 'can' : 'cannot'} see me!`)
-    }
+    //something goes here?
+  },
+  // mounted method is AFTER the methods object
+  mounted() {
+    console.log(`hello world!`, this.$store)
   },
   components: {
     HelloWorld,
@@ -37,6 +31,16 @@ export default {
   }
 }
 </script>
+
+<template>
+  <div id="app">
+    <img alt="Vue logo" src="./assets/logo.png">
+    <HelloWorld :foo="foo" />
+    <SecondComponent :bar="bar" />
+    <ConditionalComponent v-if="seen" />
+    <Button @change-seen="setSeen" />
+  </div>
+</template>
 
 <style>
 #app {
