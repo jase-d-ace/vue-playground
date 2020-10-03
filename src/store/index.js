@@ -1,4 +1,4 @@
-import Vuex from "vuex";
+import { createStore } from "vuex";
 
 const store = createStore({
   state() {
@@ -9,8 +9,8 @@ const store = createStore({
     }
   },
   mutations: {
-    setSeen() {
-      this.seen = !this.seen
+    setSeen(state, seen) {
+      state.seen = seen
       console.log(`hello world! Right now you ${this.seen ? 'can' : 'cannot'} see me!`)
     }
   },
