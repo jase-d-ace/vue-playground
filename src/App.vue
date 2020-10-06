@@ -2,7 +2,7 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld :foo="foo" />
-    <SecondComponent :bar="bar" />
+    <SecondComponent v-bind:style="{color: color}" :bar="bar" />
     <ConditionalComponent v-if="seen" />
     <Button @change-seen="setSeen" />
     <Input />
@@ -27,7 +27,9 @@ export default {
     ...mapState({
       foo: state => state.foo,
       bar: state => state.bar,
-      seen: state => state.seen
+      seen: state => state.seen,
+      guitars: state => state.guitars,
+      color: state => state.color
     })
   },
   methods: {
