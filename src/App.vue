@@ -15,15 +15,20 @@ import SecondComponent from './components/SecondComponent.vue'
 import ConditionalComponent from './components/ConditionalComponent.vue'
 import Button from './components/Button.vue'
 import Input from './components/Input.vue'
+import { mapState } from 'vuex'
 
 export default {
   name: 'App',
   data() {
     return {
-      foo:"Let's be mature, not 12",
-      bar:"How to Vue",
-      seen: true
     };
+  },
+  computed: {
+    ...mapState({
+      foo: state => state.foo,
+      bar: state => state.bar,
+      seen: state => state.seen
+    })
   },
   methods: {
     setSeen() {
