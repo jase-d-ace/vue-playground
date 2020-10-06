@@ -21,10 +21,6 @@ import { mapState } from 'vuex'
 
 export default {
   name: 'App',
-  data() {
-    return {
-    };
-  },
   computed: {
     ...mapState({
       foo: state => state.foo,
@@ -33,8 +29,6 @@ export default {
       guitars: state => state.guitars,
       color: state => state.color
     })
-  },
-  methods: {
   },
   components: {
     HelloWorld,
