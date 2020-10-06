@@ -4,7 +4,8 @@
     <HelloWorld :foo="foo" />
     <SecondComponent v-bind:style="{color: color}" :bar="bar" />
     <ConditionalComponent v-if="seen" />
-    <Button @change-seen="setSeen" />
+    <ListContainer :guitars="guitars" />
+    <Button />
     <Input />
   </div>
 </template>
@@ -15,6 +16,7 @@ import SecondComponent from './components/SecondComponent.vue'
 import ConditionalComponent from './components/ConditionalComponent.vue'
 import Button from './components/Button.vue'
 import Input from './components/Input.vue'
+import ListContainer from './components/ListContainer.vue'
 import { mapState } from 'vuex'
 
 export default {
@@ -33,16 +35,13 @@ export default {
     })
   },
   methods: {
-    setSeen() {
-      this.seen = !this.seen
-      console.log(`hello world! Right now you ${this.seen ? 'can' : 'cannot'} see me!`)
-    }
   },
   components: {
     HelloWorld,
     SecondComponent,
     ConditionalComponent,
     Button,
+    ListContainer,
     Input
   }
 }
