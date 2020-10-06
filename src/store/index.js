@@ -5,7 +5,23 @@ const store = createStore({
     return {
       foo:"Let's be mature, not 12",
       bar:"How to Vue",
-      seen: true
+      seen: true,
+      guitars: [{
+        brand: "Gibson",
+        model: "Les Paul",
+        have: false
+      },
+        {
+          brand: "Fender",
+          model: "Stratocaster",
+          have: true
+        },
+        {
+          brand: "Ibanez",
+          model: "RG2020",
+          have: false
+        }],
+      color: "cornflowerblue"
     }
   },
   mutations: {
