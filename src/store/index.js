@@ -7,16 +7,19 @@ const store = createStore({
       bar:"How to Vue",
       seen: true,
       guitars: [{
+        id: 0,
         brand: "Gibson",
         model: "Les Paul",
         have: false
       },
         {
+          id: 1,
           brand: "Fender",
           model: "Stratocaster",
           have: true
         },
         {
+          id: 2,
           brand: "Ibanez",
           model: "RG2020",
           have: false
