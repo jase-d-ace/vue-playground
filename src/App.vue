@@ -5,7 +5,6 @@
     <SecondComponent v-bind:style="{color: color}" :bar="bar" />
     <ConditionalComponent v-if="seen" />
     <ListContainer :guitars="guitars" />
-    <Button />
     <Input />
   </div>
 </template>
@@ -14,7 +13,7 @@
 import HelloWorld from './components/HelloWorld.vue'
 import SecondComponent from './components/SecondComponent.vue'
 import ConditionalComponent from './components/ConditionalComponent.vue'
-import Button from './components/Button.vue'
+/* import Button from './components/Button.vue' */
 import Input from './components/Input.vue'
 import ListContainer from './components/ListContainer.vue'
 import { mapState } from 'vuex'
@@ -34,7 +33,7 @@ export default {
     HelloWorld,
     SecondComponent,
     ConditionalComponent,
-    Button,
+    /* Button, */
     ListContainer,
     Input
   }
