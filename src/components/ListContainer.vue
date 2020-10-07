@@ -14,7 +14,7 @@ export default {
 <template>
   <div class="list">
     <h1>Guitars</h1>
-    <ul v-bind:key="guitar" v-for="guitar in guitars" class="vue-list">
+    <ul v-bind:key="guitar.id" v-for="guitar in guitars" class="vue-list">
       <ListItem :guitar="guitar" />
     </ul>
   </div>
